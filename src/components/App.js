@@ -2,12 +2,11 @@
 // - De React
 import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
-// - Nuestros
 import callToApi from "../services/api";
 import Filters from "./Filters";
 import CharacterList from "./CharacterList";
 import CharacterDetail from "./CharacterDetail";
-// - Sass
+// import ErrorFilter from "./ErrorFilter";
 import "../styles/App.scss";
 // - Imágenes
 /* SECCIÓN DEL COMPONENTE */
@@ -15,10 +14,8 @@ function App() {
   const [characterList, setCharacterList] = useState([]);
   const [typedName, setTypedName] = useState("");
   const [selectHouse, setSelectHouse] = useState("Gryffindor");
-  const [errorMsg, setErrorMsg] = useState("");
-  /* VARIABLES ESTADO (DATOS) */
+  // const [errorMsg, setErrorMsg] = useState("");
 
-  /* EFECTOS (código cuando carga la página) */
   useEffect(() => {
     callToApi(selectHouse).then((selectedData) => {
       setCharacterList(selectedData);
@@ -45,6 +42,11 @@ function App() {
     setTypedName(value);
   };
 
+  // const renderErrorFilter = <ErrorFilter typedName={typedName}></ErrorFilter>;
+
+  // const renderSearchResult =
+  //   inputFiltered.length === 0 ? renderErrorFilter : handleTypedName;
+
   const handleSelectHouse = (value) => {
     setSelectHouse(value);
   };
@@ -54,8 +56,8 @@ function App() {
       .toLocaleLowerCase()
       .includes(typedName.toLocaleLowerCase());
   });
-  // .filter((eachHouse) => {
-  //   return eachHouse.house === selectHouse;
+  // .filter((eachCharacter) => {
+  //   return eachCharacter.house === selectHouse;
   // });
 
   /* HTML */
@@ -90,7 +92,7 @@ function App() {
           ></Route>
         </Routes>
       </main>
-      {errorMsg}
+      {/* {errorMsg} */}
     </div>
   );
 }
