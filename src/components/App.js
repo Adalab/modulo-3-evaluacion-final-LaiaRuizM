@@ -1,11 +1,12 @@
 /* SECCIÓN DE IMPORT */
 // - De React
 import { useEffect, useState } from "react";
-// import { Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 // - Nuestros
 import callToApi from "../services/api";
 import Filters from "./Filters";
 import CharacterList from "./CharacterList";
+import CharacterDetail from "./CharacterDetail";
 // - Sass
 import "../styles/App.scss";
 // - Imágenes
@@ -14,7 +15,7 @@ function App() {
   const [characterList, setCharacterList] = useState([]);
   const [typedName, setTypedName] = useState("");
   const [selectHouse, setSelectHouse] = useState("Gryffindor");
-
+  const [errorMsg, setErrorMsg] = useState("");
   /* VARIABLES ESTADO (DATOS) */
 
   /* EFECTOS (código cuando carga la página) */
@@ -24,6 +25,22 @@ function App() {
     });
   }, [selectHouse]);
 
+  // length === 0 (take a look Dayana)
+  // const handleTypedName = (value) => {
+  //   if (characterList[0].name.includes(value)) {
+  //     setTypedName(value);
+  //     setErrorMsg("");
+  //   } else {
+  //     setTypedName(value);
+  //     setErrorMsg(
+  //       <small>
+  //         There is not any character who has any coincidence with the following
+  //         word {typedName}
+  //       </small>
+  //     );
+  //   }
+  // };
+
   const handleTypedName = (value) => {
     setTypedName(value);
   };
@@ -32,15 +49,14 @@ function App() {
     setSelectHouse(value);
   };
 
-  const inputFiltered = characterList
-    .filter((eachCharacter) => {
-      return eachCharacter.name
-        .toLocaleLowerCase()
-        .includes(typedName.toLocaleLowerCase());
-    })
-    .filter((eachHouse) => {
-      return eachHouse.house === selectHouse;
-    });
+  const inputFiltered = characterList.filter((eachCharacter) => {
+    return eachCharacter.name
+      .toLocaleLowerCase()
+      .includes(typedName.toLocaleLowerCase());
+  });
+  // .filter((eachHouse) => {
+  //   return eachHouse.house === selectHouse;
+  // });
 
   /* HTML */
   return (
@@ -51,19 +67,32 @@ function App() {
         <img className="header__img" src="" alt="Harry Potter" title="" />
       </header>
       <main className="main">
-        <Filters
-          typedName={typedName}
-          selectHouse={selectHouse}
-          handleTypedName={handleTypedName}
-          handleSelectHouse={handleSelectHouse}
-        ></Filters>
-        <CharacterList inputFiltered={inputFiltered}></CharacterList>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Filters
+                  typedName={typedName}
+                  selectHouse={selectHouse}
+                  handleTypedName={handleTypedName}
+                  handleSelectHouse={handleSelectHouse}
+                ></Filters>
+                <CharacterList inputFiltered={inputFiltered}></CharacterList>
+              </>
+            }
+          ></Route>
+          <Route
+            path="/character/:characterId"
+            element={
+              <CharacterDetail characterList={characterList}></CharacterDetail>
+            }
+          ></Route>
+        </Routes>
       </main>
+      {errorMsg}
     </div>
   );
 }
 
-/* PROP-TYPES */
-
-/* EXPORT DEL COMPONENTE */
 export default App;

@@ -9,11 +9,15 @@ const callToApi = (selectHouse) => {
       const selectedData = data.map((eachCharacter) => {
         return {
           name: eachCharacter.name,
-          photo: eachCharacter.image,
+          photo:
+            eachCharacter.image ||
+            `https://via.placeholder.com/210x295/ffffff/666666/?text=HarryPotter`,
           species: eachCharacter.species,
           id: eachCharacter.id,
           house: eachCharacter.house,
           gender: eachCharacter.gender,
+          status: eachCharacter.alive,
+          alternateName: eachCharacter.alternate_names,
         };
       });
       return selectedData;
