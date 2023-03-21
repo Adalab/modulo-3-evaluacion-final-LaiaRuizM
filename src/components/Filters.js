@@ -1,12 +1,23 @@
 import FilterName from "./FilterName";
 import FilterHouse from "./FilterHouse";
 
-const Filters = () => {
+const Filters = ({
+  typedName,
+  handleTypedName,
+  handleSelectHouse,
+  selectHouse,
+}) => {
   return (
     <section>
       <form className="main__form">
-        <FilterName></FilterName>
-        <FilterHouse></FilterHouse>
+        <FilterName
+          typedName={typedName}
+          handleTypedName={handleTypedName}
+        ></FilterName>
+        <FilterHouse
+          handleSelectHouse={handleSelectHouse}
+          selectHouse={selectHouse}
+        ></FilterHouse>
       </form>
     </section>
   );

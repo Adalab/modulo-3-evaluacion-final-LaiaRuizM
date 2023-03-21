@@ -12,19 +12,35 @@ import "../styles/App.scss";
 /* SECCIÓN DEL COMPONENTE */
 function App() {
   const [characterList, setCharacterList] = useState([]);
+  const [typedName, setTypedName] = useState("");
+  const [selectHouse, setSelectHouse] = useState("Gryffindor");
+
   /* VARIABLES ESTADO (DATOS) */
 
   /* EFECTOS (código cuando carga la página) */
   useEffect(() => {
-    callToApi().then((selectionData) => {
-      setCharacterList(selectionData);
-      console.log(selectionData);
+    callToApi(selectHouse).then((selectedData) => {
+      setCharacterList(selectedData);
     });
-  }, []);
+  }, [selectHouse]);
 
-  /* FUNCIONES HANDLER */
+  const handleTypedName = (value) => {
+    setTypedName(value);
+  };
 
-  /* FUNCIONES Y VARIABLES AUXILIARES PARA PINTAR EL HTML */
+  const handleSelectHouse = (value) => {
+    setSelectHouse(value);
+  };
+
+  const inputFiltered = characterList
+    .filter((eachCharacter) => {
+      return eachCharacter.name
+        .toLocaleLowerCase()
+        .includes(typedName.toLocaleLowerCase());
+    })
+    .filter((eachHouse) => {
+      return eachHouse.house === selectHouse;
+    });
 
   /* HTML */
   return (
@@ -35,8 +51,13 @@ function App() {
         <img className="header__img" src="" alt="Harry Potter" title="" />
       </header>
       <main className="main">
-        <Filters></Filters>
-        <CharacterList></CharacterList>
+        <Filters
+          typedName={typedName}
+          selectHouse={selectHouse}
+          handleTypedName={handleTypedName}
+          handleSelectHouse={handleSelectHouse}
+        ></Filters>
+        <CharacterList inputFiltered={inputFiltered}></CharacterList>
       </main>
     </div>
   );

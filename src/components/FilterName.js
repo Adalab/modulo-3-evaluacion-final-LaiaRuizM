@@ -1,13 +1,18 @@
-const FilterName = () => {
+const FilterName = ({ handleTypedName, typedName }) => {
+  const handleChange = (ev) => {
+    const value = ev.target.value;
+    handleTypedName(value);
+  };
   return (
     <label htmlFor="search">
+      Search by character:
       <input
         className="main__form--input"
         type="search"
         name="search"
         autoComplete="off"
-        value={""}
-        // onChange={handleChange}
+        value={typedName}
+        onChange={handleChange}
       />
     </label>
   );

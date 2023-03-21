@@ -1,7 +1,7 @@
 import CharacterCard from "./CharacterCard";
 
 const CharacterList = () => {
-  // const
+  // const characterHtml =
   return <CharacterCard></CharacterCard>;
 
   return (
