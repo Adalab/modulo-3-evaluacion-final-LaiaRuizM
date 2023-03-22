@@ -9,6 +9,7 @@ const Filters = ({
   selectHouse,
   handleGenderFilter,
   genderFilter,
+  handleResetData,
 }) => {
   const handleSubmit = (ev) => {
     ev.preventDefault();
@@ -28,6 +29,13 @@ const Filters = ({
           handleGenderFilter={handleGenderFilter}
           genderFilter={genderFilter}
         ></FilterGender>
+        <input
+          class=""
+          type="button"
+          value="⚡️ Reset!"
+          title="Press here to delete and re-start your information!"
+          onClick={handleResetData}
+        />
       </form>
     </section>
   );

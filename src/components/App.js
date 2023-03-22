@@ -42,11 +42,6 @@ function App() {
 
   const handleTypedName = (value) => {
     setTypedName(value);
-    if (inputFiltered.length > 0 && errorMsg) {
-      setErrorMsg(false);
-    } else if (inputFiltered.length === 0 && !errorMsg) {
-      setErrorMsg(true);
-    }
   };
 
   // const renderErrorFilter = <ErrorFilter typedName={typedName}></ErrorFilter>;
@@ -62,6 +57,16 @@ function App() {
     setGenderFilter(value);
   };
 
+  const handleResetData = () => {
+    setTypedName("");
+    setSelectHouse("Gryffindor");
+    setGenderFilter("all");
+  };
+
+  const handleOnSubmit = (ev) => {
+    ev.preventDefault();
+  };
+
   const inputFiltered = characterList
     .filter((eachCharacter) => {
       return eachCharacter.name
@@ -74,6 +79,11 @@ function App() {
         ? true
         : eachCharacter.gender === genderFilter;
     });
+  if (inputFiltered.length > 0 && errorMsg) {
+    setErrorMsg(false);
+  } else if (inputFiltered.length === 0 && !errorMsg) {
+    setErrorMsg(true);
+  }
 
   /* HTML */
   return (
@@ -96,6 +106,7 @@ function App() {
                   handleSelectHouse={handleSelectHouse}
                   handleGenderFilter={handleGenderFilter}
                   genderFilter={genderFilter}
+                  handleResetData={handleResetData}
                 ></Filters>
                 <CharacterList
                   characterList={inputFiltered}
@@ -111,6 +122,7 @@ function App() {
               <CharacterDetail
                 characterList={characterList}
                 selectCharacterFound
+                handleOnSubmit={handleOnSubmit}
               ></CharacterDetail>
             }
           ></Route>

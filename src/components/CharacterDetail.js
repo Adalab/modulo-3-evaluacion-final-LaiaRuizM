@@ -4,7 +4,7 @@ import hufflepuff from "../images/hufflepuff.jpeg";
 import ravenclaw from "../images/ravenclaw.jpeg";
 import slytherin from "../images/slytherin.jpeg";
 
-const CharacterDetail = ({ characterList }) => {
+const CharacterDetail = ({ characterList, handleOnSubmit }) => {
   const imgEachHouse = {
     gryffindor: gryffindor,
     hufflepuff: hufflepuff,
@@ -26,8 +26,9 @@ const CharacterDetail = ({ characterList }) => {
   //   return names;
   // };
 
-  return (
+  return selectCharacterFound ? (
     <section>
+      <Link to={"/"}>Return!</Link>
       <img
         src={selectCharacterFound.photo}
         alt={`Photography of ${selectCharacterFound.name}`}
@@ -35,7 +36,9 @@ const CharacterDetail = ({ characterList }) => {
       <div>
         <h2>{selectCharacterFound.name}</h2>
         <ul>
-          <li>Alternate name: {selectCharacterFound.alternateName}</li>
+          <li>
+            Alternate name: {selectCharacterFound.alternateName.join(" or ")}
+          </li>
           {/* <li>
             Alternate name:
             {selectCharacterFound.alternateName.length > 0
@@ -51,9 +54,28 @@ const CharacterDetail = ({ characterList }) => {
             alt={selectCharacterFound.house}
           />
         </ul>
+        <div>
+          <form onSubmit={handleOnSubmit}>
+            <label>
+              If you want to share with your Harry Potter's friends, here you
+              have the magic link!
+            </label>
+            <input
+              readOnly
+              autoComplete="off"
+              type="text"
+              name="search"
+              value={window.location}
+            />
+          </form>
+        </div>
       </div>
-      <Link to="/">Return!</Link>
     </section>
+  ) : (
+    <>
+      <p>Character not found, please try again!</p>
+      <Link to={"/"}>Return!</Link>
+    </>
   );
 };
 

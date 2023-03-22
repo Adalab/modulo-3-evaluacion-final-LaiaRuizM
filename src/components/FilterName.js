@@ -11,6 +11,7 @@ const FilterName = ({ handleTypedName, typedName }) => {
         type="search"
         name="search"
         autoComplete="off"
+        placeholder="Hermione Granger"
         value={typedName}
         onChange={handleChange}
       />
