@@ -1,3 +1,4 @@
+import "../styles/layouts/FilterName.scss";
 const FilterName = ({ handleTypedName, typedName }) => {
   const handleChange = (ev) => {
     const value = ev.target.value;
@@ -7,7 +8,7 @@ const FilterName = ({ handleTypedName, typedName }) => {
     <label htmlFor="search">
       Search by character:
       <input
-        className="main__form--input"
+        className="form__input--name"
         type="search"
         name="search"
         autoComplete="off"

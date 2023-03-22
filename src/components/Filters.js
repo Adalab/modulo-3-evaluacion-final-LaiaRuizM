@@ -1,6 +1,7 @@
 import FilterName from "./FilterName";
 import FilterHouse from "./FilterHouse";
 import FilterGender from "./FilterGender";
+import "../styles/layouts/Filters.scss";
 
 const Filters = ({
   typedName,
@@ -16,7 +17,7 @@ const Filters = ({
   };
   return (
     <section>
-      <form className="main__form" onSubmit={handleSubmit}>
+      <form className="form__filters" onSubmit={handleSubmit}>
         <FilterName
           typedName={typedName}
           handleTypedName={handleTypedName}
@@ -30,7 +31,7 @@ const Filters = ({
           genderFilter={genderFilter}
         ></FilterGender>
         <input
-          class=""
+          className="reset__btn"
           type="button"
           value="⚡️ Reset!"
           title="Press here to delete and re-start your information!"
