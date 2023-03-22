@@ -6,8 +6,11 @@ import CharacterList from "./CharacterList";
 import CharacterDetail from "./CharacterDetail";
 // import ErrorFilter from "./ErrorFilter";
 import ErrorLink from "./ErrorLink";
-import backgroundImg from "../images/houses.jpeg";
+// import backgroundImg from "../images/bckgr.jpg";
+import logohp from "../images/logohp.png";
 import "../styles/App.scss";
+// import Loader from "./Loader";
+
 function App() {
   const [characterList, setCharacterList] = useState([]);
   const [typedName, setTypedName] = useState("");
@@ -78,23 +81,34 @@ function App() {
     });
   if (inputFiltered.length > 0 && errorMsg) {
     setErrorMsg(false);
+    // <Loader></Loader>;
   } else if (inputFiltered.length === 0 && !errorMsg) {
     setErrorMsg(true);
   }
 
   /* HTML */
   return (
-    <div className="App">
-      {/* Aquí va el HTML */}
+    <div
+    // className="backgr"
+    // style={{
+    //   backgroundImage: `url(${backgroundImg})`,
+    // }}
+    >
       <header className="header">
-        <h1 className="header__title">~ Harry Potter! ⚡️ </h1>
-        {/* QUiZÁ PONER LA IMG COMO BACKGROUND MEJOR O AL LADO DEL TÍTULO ARRIBA COMO EN FRIENDS*/}
+        {/* <h1 className="header__title">~ Harry Potter! ⚡️ </h1> */}
         <img
+          className="header__img"
+          src={logohp}
+          alt="Harry Potter's logo"
+          title="Harry Potter's logo"
+        />
+        {/* QUiZÁ PONER LA IMG COMO BACKGROUND MEJOR O AL LADO DEL TÍTULO ARRIBA COMO EN FRIENDS*/}
+        {/* <img
           className="header__img"
           src={backgroundImg}
           alt="Harry Potter"
-          title=""
-        />
+          title="Harry Potter"
+        /> */}
       </header>
       <main className="main">
         <Routes>
@@ -115,6 +129,7 @@ function App() {
                   characterList={inputFiltered}
                   errorMsg={errorMsg}
                   typedName={typedName}
+                  handleTypedName={handleTypedName}
                 ></CharacterList>
               </>
             }

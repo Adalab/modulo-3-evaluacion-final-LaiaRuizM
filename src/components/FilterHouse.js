@@ -1,3 +1,4 @@
+import "../styles/layouts/FilterHouse.scss";
 const FilterHouse = ({ handleSelectHouse, selectHouse }) => {
   const handleChange = (ev) => {
     const value = ev.target.value;
@@ -7,6 +8,7 @@ const FilterHouse = ({ handleSelectHouse, selectHouse }) => {
     <label htmlFor="houses">
       Select your favorite house!
       <select
+        className="select__houses"
         name="houses"
         id="houses"
         onChange={handleChange}

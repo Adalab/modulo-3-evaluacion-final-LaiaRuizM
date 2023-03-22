@@ -1,0 +1,104 @@
+.characterDetails {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    &__section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-family: 'Indie Flower', cursive;
+        text-align: center;
+        background: radial-gradient(rgba(253, 187, 45, 0.7), rgba(34, 193, 195, 0.6));
+        width: 400px;
+        padding-top: 10px;
+    }
+    &__name{
+        font-size: 20px;
+        line-height: 25px;
+        font-weight: 900;
+        padding: 10px;
+        text-shadow: 5px 2px 6px #1f2124;
+        background: linear-gradient(to right, orange, #ec38bc, #7303c0, cyan);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+    &__ul {
+        list-style: none;
+        font-size: 15px;
+        line-height: 25px;
+        overflow-wrap: break-word;
+    }
+    &__image {
+        width: 150px;
+    }
+
+    &__link {
+        font-family: 'Indie Flower', cursive;
+        font-size: 25px;
+        text-decoration: none;
+        color: black;
+        display: flex;
+        justify-content: center;
+        width: 150px;
+        border-radius: 10px;
+    }
+
+    &__errorMsg{
+        font-family: 'Indie Flower', cursive;
+        font-weight: bold;
+        font-size: 30px;
+        color: red;
+        text-align: center;
+        background-color: rgba(248, 248, 248, 0.74);
+    }
+
+    &__house {
+        width: 60px;
+        height: 60px;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+}
+
+.fa-heart-pulse{
+    background: linear-gradient(to right, orange, #ec38bc, #7303c0, cyan);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.fa-skull{
+    background: linear-gradient(to right, #101111, #767d7b, #f5fffc);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.formDetails {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    gap: 10px;
+    &__label {
+        font-weight: 900;
+        line-height: 20px;
+    }
+    &__share {
+        margin-bottom: 20px;
+        margin-top: 8px;
+        height: 25px;
+        border: none;
+        border-radius: 8px;
+        background-color: #ecf0f1;
+        font-size: 12px;
+        color: #444444;
+        border: 1px solid darkgrey;
+        &:focus {
+            outline: none;
+            box-shadow: 0 0 3px #2bc0a7;
+        }
+    }
+}

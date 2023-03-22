@@ -1,0 +1,45 @@
+.character__img{
+    width: 70px;
+    // border-radius: 10px;
+    // margin-right: 20px;
+    // max-height: 200px;
+    // max-width: 200px;
+    @media (min-width: 768px) {
+        width: 150px;
+    }
+}
+
+.card {
+    font-family: 'Indie Flower', cursive;
+    text-align: center;
+    // background-color: rgba(252, 239, 224, 0.986);
+    // margin: 10px;
+    border-radius: 5px;
+    //height: 220px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 20px 100px;
+    padding: 20px;
+    padding-top: 25px;
+    @media (min-width: 768px) {
+        width: 150px;
+    }
+    &__title {
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+    @media (min-width: 768px) {
+        font-size: 24px;
+    }
+    &__link {
+        color: black;
+        text-decoration: none;
+    }
+    &__p {
+        font-size: 15px;
+        line-height: 1.5;
+        margin-bottom: 3px;
+    }
+    @media (min-width: 768px) {
+        font-size: 20px;
+    }
+}
