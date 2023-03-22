@@ -1,5 +1,3 @@
-/* SECCIÓN DE IMPORT */
-// - De React
 import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import callToApi from "../services/api";
@@ -8,9 +6,8 @@ import CharacterList from "./CharacterList";
 import CharacterDetail from "./CharacterDetail";
 // import ErrorFilter from "./ErrorFilter";
 import ErrorLink from "./ErrorLink";
+import backgroundImg from "../images/houses.jpeg";
 import "../styles/App.scss";
-// - Imágenes
-/* SECCIÓN DEL COMPONENTE */
 function App() {
   const [characterList, setCharacterList] = useState([]);
   const [typedName, setTypedName] = useState("");
@@ -91,7 +88,13 @@ function App() {
       {/* Aquí va el HTML */}
       <header className="header">
         <h1 className="header__title">~ Harry Potter! ⚡️ </h1>
-        <img className="header__img" src="" alt="Harry Potter" title="" />
+        {/* QUiZÁ PONER LA IMG COMO BACKGROUND MEJOR O AL LADO DEL TÍTULO ARRIBA COMO EN FRIENDS*/}
+        <img
+          className="header__img"
+          src={backgroundImg}
+          alt="Harry Potter"
+          title=""
+        />
       </header>
       <main className="main">
         <Routes>

@@ -18,14 +18,6 @@ const CharacterDetail = ({ characterList, handleOnSubmit }) => {
     (character) => character.id === characterId
   );
 
-  // const renderAlternateNames = ({ selectCharacterFound }) => {
-  //   const arrayAlternative = selectCharacterFound.alternateName;
-  //   const names = arrayAlternative.map((eachNameAlternative) => {
-  //     return <li>{eachNameAlternative}</li>;
-  //   });
-  //   return names;
-  // };
-
   return selectCharacterFound ? (
     <section>
       <Link to={"/"}>Return!</Link>
@@ -37,15 +29,20 @@ const CharacterDetail = ({ characterList, handleOnSubmit }) => {
         <h2>{selectCharacterFound.name}</h2>
         <ul>
           <li>
-            Alternate name: {selectCharacterFound.alternateName.join(" or ")}
+            Alternate name:{" "}
+            {selectCharacterFound.alternateName.join(" or ")
+              ? selectCharacterFound.alternateName.join(" or ")
+              : " Adaba... This character does not have any alternate name"}
           </li>
-          {/* <li>
-            Alternate name:
-            {selectCharacterFound.alternateName.length > 0
-              ? renderAlternateNames()
-              : " This character does not have any alternate name"}
-          </li> */}
-          <li>Status: {selectCharacterFound.status ? "Alive" : "💀"}</li>
+          {/* <li>Status: {selectCharacterFound.status ? "Alive" : "💀"}</li> */}
+          <li>
+            Status:{" "}
+            {selectCharacterFound.status ? (
+              <i class="fa-solid fa-heart-pulse"></i>
+            ) : (
+              <i class="fa-solid fa-skull"></i>
+            )}
+          </li>
           <li>Specie: {selectCharacterFound.species}</li>
           <li>Gender: {selectCharacterFound.gender}</li>
           <li>House: {selectCharacterFound.house}</li>
