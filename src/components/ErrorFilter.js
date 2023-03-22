@@ -1,4 +1,5 @@
-const ErrorFilter = ({ handleTypedName }) => {
+import PropTypes from "prop-types";
+const ErrorFilter = ({ typedName, handleTypedName }) => {
   const handleReset = (ev) => {
     ev.preventDefault();
     handleTypedName(ev.currentTarget.id);
@@ -6,13 +7,19 @@ const ErrorFilter = ({ handleTypedName }) => {
   return (
     <section className="section__warning">
       <p>
-        <span>The creature that you are looking for isn't here</span>
+        There is not any character who has any coincidence with the following
+        word {typedName}
       </p>
       <button id="reset" onClick={handleReset}>
-        Try again!
+        Wow, maybe you should try again!
       </button>
     </section>
   );
 };
 
 export default ErrorFilter;
+
+ErrorFilter.propTypes = {
+  typedName: PropTypes.string,
+  handleTypedName: PropTypes.func, // inputFiltered
+};

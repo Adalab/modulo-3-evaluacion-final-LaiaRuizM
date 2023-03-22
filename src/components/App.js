@@ -7,6 +7,7 @@ import Filters from "./Filters";
 import CharacterList from "./CharacterList";
 import CharacterDetail from "./CharacterDetail";
 // import ErrorFilter from "./ErrorFilter";
+import ErrorLink from "./ErrorLink";
 import "../styles/App.scss";
 // - Imágenes
 /* SECCIÓN DEL COMPONENTE */
@@ -14,7 +15,8 @@ function App() {
   const [characterList, setCharacterList] = useState([]);
   const [typedName, setTypedName] = useState("");
   const [selectHouse, setSelectHouse] = useState("Gryffindor");
-  // const [errorMsg, setErrorMsg] = useState("");
+  const [genderFilter, setGenderFilter] = useState("all");
+  const [errorMsg, setErrorMsg] = useState(false);
 
   useEffect(() => {
     callToApi(selectHouse).then((selectedData) => {
@@ -40,6 +42,11 @@ function App() {
 
   const handleTypedName = (value) => {
     setTypedName(value);
+    if (inputFiltered.length > 0 && errorMsg) {
+      setErrorMsg(false);
+    } else if (inputFiltered.length === 0 && !errorMsg) {
+      setErrorMsg(true);
+    }
   };
 
   // const renderErrorFilter = <ErrorFilter typedName={typedName}></ErrorFilter>;
@@ -51,14 +58,22 @@ function App() {
     setSelectHouse(value);
   };
 
-  const inputFiltered = characterList.filter((eachCharacter) => {
-    return eachCharacter.name
-      .toLocaleLowerCase()
-      .includes(typedName.toLocaleLowerCase());
-  });
-  // .filter((eachCharacter) => {
-  //   return eachCharacter.house === selectHouse;
-  // });
+  const handleGenderFilter = (value) => {
+    setGenderFilter(value);
+  };
+
+  const inputFiltered = characterList
+    .filter((eachCharacter) => {
+      return eachCharacter.name
+        .toLocaleLowerCase()
+        .includes(typedName.toLocaleLowerCase());
+    })
+    .sort((x, y) => x.name.localeCompare(y.name))
+    .filter((eachCharacter) => {
+      return genderFilter === "all"
+        ? true
+        : eachCharacter.gender === genderFilter;
+    });
 
   /* HTML */
   return (
@@ -79,17 +94,27 @@ function App() {
                   selectHouse={selectHouse}
                   handleTypedName={handleTypedName}
                   handleSelectHouse={handleSelectHouse}
+                  handleGenderFilter={handleGenderFilter}
+                  genderFilter={genderFilter}
                 ></Filters>
-                <CharacterList inputFiltered={inputFiltered}></CharacterList>
+                <CharacterList
+                  characterList={inputFiltered}
+                  errorMsg={errorMsg}
+                  typedName={typedName}
+                ></CharacterList>
               </>
             }
           ></Route>
           <Route
             path="/character/:characterId"
             element={
-              <CharacterDetail characterList={characterList}></CharacterDetail>
+              <CharacterDetail
+                characterList={characterList}
+                selectCharacterFound
+              ></CharacterDetail>
             }
           ></Route>
+          <Route path="*" element={<ErrorLink></ErrorLink>}></Route>
         </Routes>
       </main>
       {/* {errorMsg} */}

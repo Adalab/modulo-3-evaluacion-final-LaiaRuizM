@@ -1,7 +1,7 @@
 import CharacterCard from "./CharacterCard";
 
-const CharacterList = ({ inputFiltered }) => {
-  const characterHtml = inputFiltered.map((eachCharacter) => {
+const CharacterList = ({ characterList, typedName, errorMsg }) => {
+  const characterHtml = characterList.map((eachCharacter) => {
     return (
       <CharacterCard
         eachCharacter={eachCharacter}
@@ -13,6 +13,10 @@ const CharacterList = ({ inputFiltered }) => {
   return (
     <section>
       <ul>{characterHtml}</ul>
+      {/* quizá poner entre <p> si necesito clase y ponerlo sin interpolar  */}
+      {errorMsg &&
+        `There is not any character who has any coincidence with the following
+          word ${typedName}`}
     </section>
   );
 };
