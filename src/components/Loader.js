@@ -1,10 +1,10 @@
-// import loaderHP from "../images/loader.gif";
-import loaderHP from "../images/loader2.gif";
+import loaderHP from "../images/loader.gif";
+import "../styles/layouts/Loader.scss";
 
 const LoadingHP = () => {
   return (
     <div className="loader__container">
-      <div className="lds-ellipsis">
+      <div className="load__ellipsis">
         <img
           src={loaderHP}
           className="animation"

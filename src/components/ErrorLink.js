@@ -1,3 +1,4 @@
+import "../styles/layouts/ErrorLink.scss";
 const ErrorLink = () => {
   return (
     <section className="section__warning">

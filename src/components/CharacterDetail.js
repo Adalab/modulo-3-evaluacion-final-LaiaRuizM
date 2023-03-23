@@ -4,6 +4,7 @@ import hufflepuff from "../images/hufflepuff.jpeg";
 import ravenclaw from "../images/ravenclaw.jpeg";
 import slytherin from "../images/slytherin.jpeg";
 import "../styles/layouts/CharacterDetail.scss";
+import LoadingHP from "./Loader";
 
 const CharacterDetail = ({ characterList, handleOnSubmit }) => {
   const imgEachHouse = {
@@ -18,82 +19,80 @@ const CharacterDetail = ({ characterList, handleOnSubmit }) => {
   const selectCharacterFound = characterList.find(
     (character) => character.id === characterId
   );
+  if (characterList.length === 0) {
+    return <LoadingHP></LoadingHP>;
+  }
 
   return selectCharacterFound ? (
     <>
-      <Link className="characterDetails__link" to={"/"}>
-        Go back!
-      </Link>
-      <main className="characterDetails">
-        <section className="characterDetails__section">
-          <img
-            className="characterDetails__img"
-            src={selectCharacterFound.photo}
-            alt={`Photography of ${selectCharacterFound.name}`}
-          />
+      <div className="box">
+        <Link className="box__link" to={"/list"}>
+          <i className="fa-solid fa-angles-left"> Return home ⚡️ </i>
+        </Link>
+      </div>
+      <section className="characterDetails">
+        <article className="characterDetails__article">
           <div>
-            <h2 className="characterDetails__name">
-              {selectCharacterFound.name}
-            </h2>
-            <ul className="characterDetails__ul">
-              <li>
-                Alternate name:{" "}
-                {selectCharacterFound.alternateName.join(" or ")
-                  ? selectCharacterFound.alternateName.join(" or ")
-                  : " Adaba... This character does not have any alternate name"}
-              </li>
-              {/* <li>Status: {selectCharacterFound.status ? "Alive" : "💀"}</li> */}
-              <li>
-                Status:{" "}
-                {selectCharacterFound.status ? (
-                  <i class="fa-solid fa-heart-pulse"></i>
-                ) : (
-                  <i class="fa-solid fa-skull"></i>
-                )}
-              </li>
-              <li>Specie: {selectCharacterFound.species}</li>
-              <li>Gender: {selectCharacterFound.gender}</li>
-              <li>House: {selectCharacterFound.house}</li>
-              <img
-                className="characterDetails__house"
-                src={
-                  imgEachHouse[selectCharacterFound.house.toLocaleLowerCase()]
-                }
-                alt={selectCharacterFound.house}
-              />
-            </ul>
-            <div>
-              <form className="formDetails" onSubmit={handleOnSubmit}>
-                <label className="formDetails__label">
-                  If you want to share with your Harry Potter's friends, here
-                  you have the magic link!
-                </label>
-                <input
-                  className="formDetails__share"
-                  readOnly
-                  autoComplete="off"
-                  type="text"
-                  name="search"
-                  value={window.location}
-                />
-              </form>
-            </div>
+            <img
+              className="img"
+              src={selectCharacterFound.photo}
+              alt={`Photography of ${selectCharacterFound.name}`}
+            />
           </div>
-        </section>
-      </main>
+          <article />
+          <h2 className="characterDetails__title">
+            {selectCharacterFound.name}
+          </h2>
+          <ul className="characterDetails__information">
+            <li>
+              Alternate name:{" "}
+              {selectCharacterFound.alternateName.join(" or ")
+                ? selectCharacterFound.alternateName.join(" or ")
+                : " Adaba... This character does not have any alternate name"}
+            </li>
+            <li>
+              Status:{" "}
+              {selectCharacterFound.status ? (
+                <i class="fa-solid fa-heart-pulse"></i>
+              ) : (
+                <i class="fa-solid fa-skull"></i>
+              )}
+            </li>
+            <li>Specie: {selectCharacterFound.species}</li>
+            <li>Gender: {selectCharacterFound.gender}</li>
+            <li>House: {selectCharacterFound.house}</li>
+            <img
+              className="house"
+              src={imgEachHouse[selectCharacterFound.house.toLocaleLowerCase()]}
+              alt={selectCharacterFound.house}
+            />
+          </ul>
+          <div>
+            <form className="form" onSubmit={handleOnSubmit}>
+              <label className="form__label">
+                If you want to share with your Harry Potter's friends, here you
+                have the magic link!
+              </label>
+              <input
+                className="share"
+                readOnly
+                autoComplete="off"
+                type="text"
+                name="search"
+                value={window.location}
+              />
+            </form>
+          </div>
+        </article>
+      </section>
     </>
   ) : (
-    <>
-      <p className="characterDetails__errorMsg">
-        Character not found, please try again!
-      </p>
-      <Link className="characterDetails__link" to={"/"}>
-        Go back!
+    <div className="divError">
+      <p className="errorMsg">Character not found, please try again!</p>
+      <Link className="linkErrorMsg" to={"/"}>
+        <i className="fa-solid fa-angles-left"> Go back!</i>
       </Link>
-    </>
+    </div>
   );
 };
-
-// prop: alternateName
-
 export default CharacterDetail;

@@ -2,20 +2,21 @@ import { Link } from "react-router-dom";
 import "../styles/layouts/CharacterCard.scss";
 const CharacterCard = ({ eachCharacter }) => {
   return (
-    <li>
-      <Link className="card__link" to={`/character/${eachCharacter.id}`}>
-        <li className="card">
+    <Link className="list__link" to={`/character/${eachCharacter.id}`}>
+      <li className="list__li">
+        <span className="span">DETAILS⚡️</span>
+        <div className="div">
           <img
-            className="character__img"
+            className="img"
             src={eachCharacter.photo}
             alt={`Photography of ${eachCharacter.name}`}
             title={`Photography of ${eachCharacter.name}`}
           />
-          <h4 className="card__title">{eachCharacter.name}</h4>
-          <p className="card__p">{eachCharacter.species}</p>
-        </li>
-      </Link>
-    </li>
+        </div>
+        <h4 className="list__title">{eachCharacter.name}</h4>
+        <p className="list__p">{eachCharacter.species}</p>
+      </li>
+    </Link>
   );
 };
 

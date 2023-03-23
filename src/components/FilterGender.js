@@ -1,3 +1,4 @@
+import "../styles/layouts/FilterHouse.scss";
 const FilterGender = ({ handleGenderFilter, genderFilter }) => {
   const handleInput = (ev) => {
     const value = ev.target.value;
@@ -7,7 +8,7 @@ const FilterGender = ({ handleGenderFilter, genderFilter }) => {
     <fieldset>
       <legend>Search by gender:</legend>
       <input
-        className="main__form--input"
+        className="form__input--gender"
         type="radio"
         id="all"
         name="gender"
@@ -17,7 +18,7 @@ const FilterGender = ({ handleGenderFilter, genderFilter }) => {
       />
       <label>All genders</label>
       <input
-        className="main__form--input"
+        className="form__input--gender"
         type="radio"
         id="male"
         name="gender"
@@ -27,7 +28,7 @@ const FilterGender = ({ handleGenderFilter, genderFilter }) => {
       />
       <label>Males</label>
       <input
-        className="main__form--input"
+        className="form__input--gender"
         type="radio"
         id="female"
         name="gender"
@@ -37,7 +38,7 @@ const FilterGender = ({ handleGenderFilter, genderFilter }) => {
       />
       <label>Females</label>
       <input
-        className="main__form--input"
+        className="form__input--gender"
         type="radio"
         id="other"
         name="gender"

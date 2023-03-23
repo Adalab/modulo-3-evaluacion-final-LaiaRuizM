@@ -1,45 +1,85 @@
-.character__img{
-    width: 70px;
-    // border-radius: 10px;
-    // margin-right: 20px;
-    // max-height: 200px;
-    // max-width: 200px;
-    @media (min-width: 768px) {
-        width: 150px;
-    }
+.span{
+    padding-left: 7px;
+    padding-top: 10px;
+    display: flex;
+    font-weight: 900;
+    flex-direction: column;
+    background: linear-gradient(to right, orange, #ec38bc, #7303c0, cyan);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 5px 4px 6px rgb(0, 0, 0);
 }
-
-.card {
-    font-family: 'Indie Flower', cursive;
-    text-align: center;
-    // background-color: rgba(252, 239, 224, 0.986);
-    // margin: 10px;
-    border-radius: 5px;
-    //height: 220px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    margin: 20px 100px;
-    padding: 20px;
-    padding-top: 25px;
+.list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transform: translateY(-20px);
     @media (min-width: 768px) {
-        width: 150px;
+            grid-template-columns: 250px 250px 250px;
     }
-    &__title {
-        font-size: 15px;
-        margin-bottom: 10px;
-    }
-    @media (min-width: 768px) {
-        font-size: 24px;
+    @media (min-width: 1024px) {
+        grid-template-columns: 300px 300px 300px;
     }
     &__link {
-        color: black;
+        font-family: 'Indie Flower', cursive;
         text-decoration: none;
+        padding: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        text-align: center;
+        color: black;
     }
-    &__p {
+    &__li {
+        font-family: 'Indie Flower', cursive;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    &__title {
+        font-family: 'Indie Flower', cursive;
+        width: 140px;
+        transform: translateY(-20px);
+        font-weight: 700;
+        color: black;
+        background-color: white;
+        font-size: 16px;
+        z-index: 2;
+        text-align: center;
+        padding: 10px;
+        border-radius: 10px;
+        opacity: 0.7;
+        cursor: pointer;
+    }
+    &__p{
         font-size: 15px;
-        line-height: 1.5;
-        margin-bottom: 3px;
+        font-family: 'Indie Flower', cursive;
     }
     @media (min-width: 768px) {
         font-size: 20px;
+    }
+}
+
+.div {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 1px 10px 0 white, 0 1px 20px 0 rgba(22, 3, 3, 0.877);
+}
+
+.img {
+    width: 100%;
+    height: auto;
+    display: block;
+    @media (min-width: 768px) {
+        width: 100%;
     }
 }

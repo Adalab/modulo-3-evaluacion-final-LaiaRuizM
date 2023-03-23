@@ -7,9 +7,10 @@ import CharacterDetail from "./CharacterDetail";
 // import ErrorFilter from "./ErrorFilter";
 import ErrorLink from "./ErrorLink";
 // import backgroundImg from "../images/bckgr.jpg";
-import logohp from "../images/logohp.png";
 import "../styles/App.scss";
-// import Loader from "./Loader";
+// import LoadingHP from "./Loader";
+import Header from "./Header";
+import Landing from "./Landing";
 
 function App() {
   const [characterList, setCharacterList] = useState([]);
@@ -85,6 +86,9 @@ function App() {
   } else if (inputFiltered.length === 0 && !errorMsg) {
     setErrorMsg(true);
   }
+  // if (characterList.length === 0) {
+  //   return <LoadingHP></LoadingHP>;
+  // }
 
   /* HTML */
   return (
@@ -94,28 +98,22 @@ function App() {
     //   backgroundImage: `url(${backgroundImg})`,
     // }}
     >
-      <header className="header">
-        {/* <h1 className="header__title">~ Harry Potter! ⚡️ </h1> */}
-        <img
-          className="header__img"
-          src={logohp}
-          alt="Harry Potter's logo"
-          title="Harry Potter's logo"
-        />
-        {/* QUiZÁ PONER LA IMG COMO BACKGROUND MEJOR O AL LADO DEL TÍTULO ARRIBA COMO EN FRIENDS*/}
-        {/* <img
+      {/* QUiZÁ PONER LA IMG COMO BACKGROUND MEJOR O AL LADO DEL TÍTULO ARRIBA COMO EN FRIENDS*/}
+      {/* <img
           className="header__img"
           src={backgroundImg}
           alt="Harry Potter"
           title="Harry Potter"
         /> */}
-      </header>
+
       <main className="main">
         <Routes>
+          <Route path="/" element={<Landing />} />
           <Route
-            path="/"
+            path="/list"
             element={
               <>
+                <Header />
                 <Filters
                   typedName={typedName}
                   selectHouse={selectHouse}

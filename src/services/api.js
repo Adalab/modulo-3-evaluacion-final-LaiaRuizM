@@ -1,3 +1,4 @@
+import imgEstrella from "../images/estrellitaylaia.png";
 const callToApi = (selectHouse) => {
   const url = `https://hp-api.onrender.com/api/characters/house/${selectHouse}`;
   return fetch(url)
@@ -7,9 +8,7 @@ const callToApi = (selectHouse) => {
       const selectedData = data.map((eachCharacter) => {
         return {
           name: eachCharacter.name,
-          photo:
-            eachCharacter.image ||
-            `https://via.placeholder.com/210x295/ffffff/666666/?text=HarryPotter`,
+          photo: eachCharacter.image || imgEstrella,
           species: eachCharacter.species,
           id: eachCharacter.id,
           house: eachCharacter.house,

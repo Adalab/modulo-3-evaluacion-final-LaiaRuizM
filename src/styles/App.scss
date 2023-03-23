@@ -1,14 +1,2 @@
 @import "./core/reset";
 
-.header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding: 30px 0;
-    background: linear-gradient(rgb(244, 154, 154), rgb(211, 211, 211));;
-    &__img{
-        width: 50vw;
-    }
-}
