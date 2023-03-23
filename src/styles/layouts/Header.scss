@@ -8,6 +8,21 @@
     background: linear-gradient(rgb(244, 154, 154), rgb(211, 211, 211));
     &__img {
         width: 50vw;
+        &:hover {
+            -webkit-transform: rotateY(180deg);
+            -webkit-transform-style: preserve-3d;
+            transform: rotateY(180deg);
+            transform-style: preserve-3d;
+        }
+    }
+    &__text{
+        font-family: 'Indie Flower', cursive;
+        font-weight: 900;
+        font-size: 20px;
+        font-style: italic;
+        &:hover {
+            background: linear-gradient(to left, #b47dcd, #e878a2, #eb85ab, #00ffff, #ffc800);
+        }
     }
 }
 .arrow{

@@ -13,6 +13,10 @@ const Header = () => {
         alt="Harry Potter's logo"
         title="Harry Potter's logo"
       />
+      <p className="header__text">
+        Instead of a wand flick, a keystroke was enough to bring you to
+        Hogwarts.
+      </p>
     </header>
   );
 };
