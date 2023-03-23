@@ -1,32 +1,20 @@
-// .form__input-gender {
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: space-between;
-//     font-family: 'Indie Flower', cursive;
-//     font-size: 20px;
-//     padding-left: 10px;
-//     width: 200px;
-//     height: 40px;
-// }
-
-// .gender{
-//      border: 5px solid blue;
-// }
-
-// .hola{
-//         border: 5px solid red;
-// }
-
-// .legend{
-    
-// }
-
-// .label{
-//     font-size: 50px;
-// }
-
-// .form__filters-legend{
-//     display: flex;
-//     flex-direction: column;
-//     border: 5px solid red;
-// }
+.form__filters{
+    &--legend{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &--input {
+        box-shadow: 3px 2px 4px hsl(57, 93%, 64%);
+        &:focus {
+            outline: none;
+            box-shadow: 2px 0 5px rgb(228, 35, 138);
+        }
+    }
+    &--label{
+        font-family: 'Indie Flower';
+        font-size: 18px;
+        margin-top: 8px;
+        color: #444444;
+    }  
+}

@@ -4,6 +4,7 @@ import callToApi from "../services/api";
 import Filters from "./Filters";
 import CharacterList from "./CharacterList";
 import CharacterDetail from "./CharacterDetail";
+import Footer from "./Footer";
 // import ErrorFilter from "./ErrorFilter";
 import ErrorLink from "./ErrorLink";
 // import backgroundImg from "../images/bckgr.jpg";
@@ -145,6 +146,7 @@ function App() {
           <Route path="*" element={<ErrorLink></ErrorLink>}></Route>
         </Routes>
       </main>
+      <Footer></Footer>
       {/* {errorMsg} */}
     </div>
   );

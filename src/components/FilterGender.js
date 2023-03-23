@@ -1,4 +1,4 @@
-import "../styles/layouts/FilterHouse.scss";
+import "../styles/layouts/FilterGender.scss";
 const FilterGender = ({ handleGenderFilter, genderFilter }) => {
   const handleInput = (ev) => {
     const value = ev.target.value;
@@ -6,46 +6,57 @@ const FilterGender = ({ handleGenderFilter, genderFilter }) => {
   };
   return (
     <fieldset>
-      <legend className="form__filters-legend">Search by gender:</legend>
-      <input
-        type="radio"
-        id="all"
-        name="gender"
-        value="all"
-        checked={genderFilter === "all"}
-        onChange={handleInput}
-      />
-      <label className="label">All genders</label>
-      <input
-        className="f"
-        type="radio"
-        id="male"
-        name="gender"
-        value="male"
-        checked={genderFilter === "male"}
-        onChange={handleInput}
-      />
-      <label>Males</label>
-      <input
-        className=""
-        type="radio"
-        id="female"
-        name="gender"
-        value="female"
-        checked={genderFilter === "female"}
-        onChange={handleInput}
-      />
-      <label>Females</label>
-      <input
-        className=""
-        type="radio"
-        id="other"
-        name="gender"
-        value="other"
-        checked={genderFilter === "other"}
-        onChange={handleInput}
-      />
-      <label>Other gender</label>
+      <legend className="form__filters--legend">
+        Search by gender:
+        <label className="form__filters--label">
+          All genders
+          <input
+            className="form__filters--input"
+            type="radio"
+            id="all"
+            name="gender"
+            value="all"
+            checked={genderFilter === "all"}
+            onChange={handleInput}
+          />
+        </label>
+        <label className="form__filters--label">
+          Males
+          <input
+            className="form__filters--input"
+            type="radio"
+            id="male"
+            name="gender"
+            value="male"
+            checked={genderFilter === "male"}
+            onChange={handleInput}
+          />
+        </label>
+        <label className="form__filters--label">
+          Females
+          <input
+            className="form__filters--input"
+            type="radio"
+            id="female"
+            name="gender"
+            value="female"
+            checked={genderFilter === "female"}
+            onChange={handleInput}
+          />
+        </label>
+        <label className="form__filters--label">
+          Other gender
+          <input
+            className="form__filters--input"
+            type="radio"
+            id="other"
+            name="gender"
+            value="other"
+            checked={genderFilter === "other"}
+            onChange={handleInput}
+          />
+        </label>
+      </legend>
     </fieldset>
   );
 };
