@@ -22,7 +22,6 @@ const CharacterDetail = ({ characterList, handleOnSubmit }) => {
   if (characterList.length === 0) {
     return <LoadingHP></LoadingHP>;
   }
-
   return selectCharacterFound ? (
     <>
       <div className="box">

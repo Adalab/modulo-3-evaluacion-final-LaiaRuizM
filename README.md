@@ -32,11 +32,11 @@
 
 ## -- Challenges I have faced 🤖 --
 
-- The challenge was to show all the sentences plus the new ones because when I wrote some new sentence + author, the showed data was only the new one, not the previous information plus this new one.
+- The challenge was to show the Loader in CharacterDetail because it appears a few seconds.
 
 ## -- Features to implement in the future 🤓 🔁 --
 
-- LocalStorage
+- LocalStorage.
 
 ## -- Project Link: --
 

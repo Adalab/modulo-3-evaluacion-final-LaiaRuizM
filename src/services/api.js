@@ -4,7 +4,6 @@ const callToApi = (selectHouse) => {
   return fetch(url)
     .then((response) => response.json())
     .then((data) => {
-      // Cuando responde la API podemos limpiar los datos aquí
       const selectedData = data.map((eachCharacter) => {
         return {
           name: eachCharacter.name,

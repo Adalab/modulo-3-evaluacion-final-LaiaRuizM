@@ -5,11 +5,8 @@ import Filters from "./Filters";
 import CharacterList from "./CharacterList";
 import CharacterDetail from "./CharacterDetail";
 import Footer from "./Footer";
-// import ErrorFilter from "./ErrorFilter";
 import ErrorLink from "./ErrorLink";
-// import backgroundImg from "../images/bckgr.jpg";
 import "../styles/App.scss";
-// import LoadingHP from "./Loader";
 import Header from "./Header";
 import Landing from "./Landing";
 
@@ -26,30 +23,9 @@ function App() {
     });
   }, [selectHouse]);
 
-  // length === 0 (take a look Dayana)
-  // const handleTypedName = (value) => {
-  //   if (characterList[0].name.includes(value)) {
-  //     setTypedName(value);
-  //     setErrorMsg("");
-  //   } else {
-  //     setTypedName(value);
-  //     setErrorMsg(
-  //       <small>
-  //         There is not any character who has any coincidence with the following
-  //         word {typedName}
-  //       </small>
-  //     );
-  //   }
-  // };
-
   const handleTypedName = (value) => {
     setTypedName(value);
   };
-
-  // const renderErrorFilter = <ErrorFilter typedName={typedName}></ErrorFilter>;
-
-  // const renderSearchResult =
-  //   inputFiltered.length === 0 ? renderErrorFilter : handleTypedName;
 
   const handleSelectHouse = (value) => {
     setSelectHouse(value);
@@ -83,30 +59,12 @@ function App() {
     });
   if (inputFiltered.length > 0 && errorMsg) {
     setErrorMsg(false);
-    // <Loader></Loader>;
   } else if (inputFiltered.length === 0 && !errorMsg) {
     setErrorMsg(true);
   }
-  // if (characterList.length === 0) {
-  //   return <LoadingHP></LoadingHP>;
-  // }
 
-  /* HTML */
   return (
-    <div
-    // className="backgr"
-    // style={{
-    //   backgroundImage: `url(${backgroundImg})`,
-    // }}
-    >
-      {/* QUiZÁ PONER LA IMG COMO BACKGROUND MEJOR O AL LADO DEL TÍTULO ARRIBA COMO EN FRIENDS*/}
-      {/* <img
-          className="header__img"
-          src={backgroundImg}
-          alt="Harry Potter"
-          title="Harry Potter"
-        /> */}
-
+    <div>
       <main className="main">
         <Routes>
           <Route path="/" element={<Landing />} />
@@ -147,7 +105,6 @@ function App() {
         </Routes>
       </main>
       <Footer></Footer>
-      {/* {errorMsg} */}
     </div>
   );
 }

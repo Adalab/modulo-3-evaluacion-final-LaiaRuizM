@@ -21,5 +21,5 @@ export default ErrorFilter;
 
 ErrorFilter.propTypes = {
   typedName: PropTypes.string,
-  handleTypedName: PropTypes.func, // inputFiltered
+  handleTypedName: PropTypes.func,
 };
