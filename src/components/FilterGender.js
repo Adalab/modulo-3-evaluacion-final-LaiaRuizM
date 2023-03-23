@@ -6,9 +6,8 @@ const FilterGender = ({ handleGenderFilter, genderFilter }) => {
   };
   return (
     <fieldset>
-      <legend>Search by gender:</legend>
+      <legend className="form__filters-legend">Search by gender:</legend>
       <input
-        className="form__input--gender"
         type="radio"
         id="all"
         name="gender"
@@ -16,9 +15,9 @@ const FilterGender = ({ handleGenderFilter, genderFilter }) => {
         checked={genderFilter === "all"}
         onChange={handleInput}
       />
-      <label>All genders</label>
+      <label className="label">All genders</label>
       <input
-        className="form__input--gender"
+        className="f"
         type="radio"
         id="male"
         name="gender"
@@ -28,7 +27,7 @@ const FilterGender = ({ handleGenderFilter, genderFilter }) => {
       />
       <label>Males</label>
       <input
-        className="form__input--gender"
+        className=""
         type="radio"
         id="female"
         name="gender"
@@ -38,7 +37,7 @@ const FilterGender = ({ handleGenderFilter, genderFilter }) => {
       />
       <label>Females</label>
       <input
-        className="form__input--gender"
+        className=""
         type="radio"
         id="other"
         name="gender"

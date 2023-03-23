@@ -5,10 +5,10 @@ const FilterName = ({ handleTypedName, typedName }) => {
     handleTypedName(value);
   };
   return (
-    <label htmlFor="search">
-      Search by character:
+    <>
+      <label htmlFor="search">Search by character:</label>
       <input
-        className="form__input--name"
+        className="form__input-text"
         type="search"
         name="search"
         autoComplete="off"
@@ -16,7 +16,7 @@ const FilterName = ({ handleTypedName, typedName }) => {
         value={typedName}
         onChange={handleChange}
       />
-    </label>
+    </>
   );
 };
 

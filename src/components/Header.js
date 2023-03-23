@@ -4,7 +4,9 @@ import "../styles/layouts/Header.scss";
 const Header = () => {
   return (
     <header className="header">
-      <Link to={"/"}>Back Home!</Link>
+      <Link to={"/"}>
+        <i className="fa-solid fa-angles-left arrow"> Back Home ⚡️ ! </i>
+      </Link>
       <img
         className="header__img"
         src={logohp}

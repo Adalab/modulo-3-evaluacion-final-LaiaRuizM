@@ -1,8 +1,8 @@
 import { Link, useLocation, matchPath } from "react-router-dom";
-import gryffindor from "../images/gryffindor.jpeg";
-import hufflepuff from "../images/hufflepuff.jpeg";
-import ravenclaw from "../images/ravenclaw.jpeg";
-import slytherin from "../images/slytherin.jpeg";
+import gryffindor from "../images/gryffindor.png";
+import hufflepuff from "../images/hufflepuff.png";
+import ravenclaw from "../images/ravenclaw.png";
+import slytherin from "../images/slytherin.png";
 import "../styles/layouts/CharacterDetail.scss";
 import LoadingHP from "./Loader";
 
@@ -27,7 +27,7 @@ const CharacterDetail = ({ characterList, handleOnSubmit }) => {
     <>
       <div className="box">
         <Link className="box__link" to={"/list"}>
-          <i className="fa-solid fa-angles-left"> Return home ⚡️ </i>
+          <i className="fa-solid fa-angles-left"> Go back ⚡️ </i>
         </Link>
       </div>
       <section className="characterDetails">
@@ -90,7 +90,7 @@ const CharacterDetail = ({ characterList, handleOnSubmit }) => {
     <div className="divError">
       <p className="errorMsg">Character not found, please try again!</p>
       <Link className="linkErrorMsg" to={"/"}>
-        <i className="fa-solid fa-angles-left"> Go back!</i>
+        <i className="fa-solid fa-angles-left"> Return home!</i>
       </Link>
     </div>
   );
