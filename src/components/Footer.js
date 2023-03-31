@@ -1,11 +1,11 @@
 import "../styles/layouts/Footer.scss";
-import logo from "../images/logo2.png";
+import logo from "../images/houses.jpeg";
 
 function Footer() {
   return (
     <footer className="footer">
       <div className="footer__container">
-        <p className="footer__text">Made with 🧡 by &copy;Laia Ruiz Martínez</p>
+        <p className="footer__text">Made with 💙 by &copy;Laia Ruiz Martínez</p>
         <a
           href="https://github.com/LaiaRuizM"
           title="GitHub de Laia Ruiz Martínez"
@@ -25,8 +25,8 @@ function Footer() {
       </div>
       <img
         src={logo}
-        alt="logo Amazon"
-        title="Amazon's logo"
+        alt="logo houses Harry Potter"
+        title="logo houses Harry Potter"
         className="footer__logo"
       />
     </footer>

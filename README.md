@@ -3,7 +3,7 @@
 # MODULE 3 | REACT - FINAL EVALUATION EXERCISE
 
 - Hi there people! 👋🏻
-- My name is Laia Ruiz Martínez and this is my first personal project which I have to expose the final day of Adalab's course.
+- My name is Laia Ruiz Martínez and this is my Harry Potter's ⚡ final evaluation exercise.
 
 ## 🛠 | Tools and programming languages:
 
@@ -24,23 +24,23 @@
 
 ## -- About this project 🙋🏼‍♀️ --
 
-- In this exercise I have created a web page to search for Amazon products.
-- When the page loads, a list appears with products. - This offers the possibility of display the different available products, sorting them alphabetically, filtering by category, by name.
-- When the user clicks on one of them (on one product, pressing "Details"), users can see a new page with details about the product which has been clicked on.
+- In this exercise I have created a web page to search for Harry Potter characters.
+- When the page loads, a list appears with characters from Gryffindor'S house preselected. - This offers the possibility of display the characters of all the houses, sorting them alphabetically, filtering by gender and / or by name.
+- When the user clicks on one of them (on one card, pressing "Details⚡"), users can see a new page with details about the person who was clicked on.
 - Also, there is an option to share the link on this detail's section!
 - I hope you like it!
 
-<!-- ## -- Challenges I have faced 🤖 --
+## -- Challenges I have faced 🤖 --
 
-- The challenge was to show the Loader in CharacterDetail because it appears a few seconds. -->
-<!--
+- The challenge was to show the Loader in CharacterDetail because it appears a few seconds.
+
 ## -- Features to implement in the future 🤓 🔁 --
 
-- LocalStorage. -->
+- LocalStorage.
 
-<!-- ## -- Project Link: --
+## -- Project Link: --
 
-http://-LaiaRuizM/ -->
+http://beta.adalab.es/modulo-3-evaluacion-final-LaiaRuizM/
 
 ## -- Contact me! --
 
