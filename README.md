@@ -1,5 +1,5 @@
-<p align="center" style="margin-center:10%">
-<img src="./LaiaRuiz.png" alt="Laia" width="200"/>
+<p align="center" style="margin-center:8%">
+<img src="./LaiaRuiz.png" alt="Laia" width="220"/>
 </p>
 
 # MODULE 3 | REACT - FINAL EVALUATION EXERCISE
