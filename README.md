@@ -1,4 +1,6 @@
-![Laia Ruiz Martínez](src/images/Laia.png)
+<p align="center" style="margin-center:10%">
+<img src="./LaiaRuiz.png" alt="Laia" width="180"/>
+</p>
 
 # MODULE 3 | REACT - FINAL EVALUATION EXERCISE
 
